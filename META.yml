@@ -1,11 +1,21 @@
-# http://module-build.sourceforge.net/META-spec.html
-#XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
-name:         CSS-Minifier-XS
-version:      0.03
-version_from: lib/CSS/Minifier/XS.pm
-installdirs:  site
+---
+name: CSS-Minifier-XS
+version: 0.04
+author:
+  - Graham TerMarsch (cpan@howlingfrog.com)
+abstract: XS based CSS minifier
+license: perl
+resources:
+  license: ~
 requires:
-    Test::More:                    0
-
-distribution_type: module
-generated_by: ExtUtils::MakeMaker version 6.30
+  perl: 5.006
+build_requires:
+  Test::More: 0
+provides:
+  CSS::Minifier::XS:
+    file: lib/CSS/Minifier/XS.pm
+    version: 0.04
+generated_by: Module::Build version 0.32
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.2.html
+  version: 1.2
