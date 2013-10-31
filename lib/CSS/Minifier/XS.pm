@@ -1,6 +1,5 @@
 package CSS::Minifier::XS;
 
-use 5.8.8;
 use strict;
 use warnings;
 
@@ -9,7 +8,7 @@ require DynaLoader;
 our @ISA = qw(Exporter DynaLoader);
 our @EXPORT_OK = qw(minify);
 
-our $VERSION = '0.08';
+our $VERSION = '0.09';
 
 bootstrap CSS::Minifier::XS $VERSION;
 
@@ -80,6 +79,11 @@ Comments implementing the "Mac/IE Comment Hack" are collapsed down to the
 smallest possible comment that would still implement the hack ("/*\*/" to start
 the hack, and "/**/" to end it).
 
+=item Zero Units
+
+Zero Units (e.g. "0px") are reduced down to just "0", as the CSS specification
+indicates that the unit is not required when its a zero value.
+
 =back
 
 =head2 Pass 3: Pruning
@@ -130,7 +134,7 @@ and be sure to include the CSS that you're having troubles minifying.
 
 =head1 COPYRIGHT
 
-Copyright (C) 2007-2010, Graham TerMarsch.  All Rights Reserved.
+Copyright (C) 2007-, Graham TerMarsch.  All Rights Reserved.
 
 This is free software; you can redistribute it and/or modify it under the same
 license as Perl itself.
